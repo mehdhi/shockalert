@@ -6,9 +6,15 @@
 -->
 <ion-view view-title="{{alertItem.name}}">
   <ion-content class="padding">
-    <img ng-src="{{alertItem.face}}" style="width: 64px; height: 64px">
+    <img ng-src="{{alertItem.icon}}" style="width: 64px; height: 64px">
     <p>
-      {{alertItem.lastText}}
+      Filtering text : {{alertItem.filter}}
+    </p>
+    <p>
+      From : {{alertItem.phone}}
+    </p>
+    <p>
+      Level : {{alertItem.level}}
     </p>
   </ion-content>
 </ion-view>

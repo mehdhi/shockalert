@@ -19,6 +19,7 @@ angular.module('starter.controllers', [])
 
 .controller('AlertItemControl', function($scope, $stateParams, AlertItems) {
   $scope.alertItem = AlertItems.get($stateParams.alertId);
+  $scope.alertItem.icon = AlertItems.getIcon($stateParams.alertId);
 })
 
 .controller('SettingCtrl', function($scope) {
