@@ -3,27 +3,28 @@
         <div class="list">
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Alert Name</span>
-                <input type="text" placeholder="New Alert">
+                <input ng-model="alert.name" type="text" placeholder="New Alert">
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Filter text</span>
-                <input type="text" placeholder="Suhr">
+                <input ng-model="alert.filter" type="text" placeholder="some text to identify">
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">From</span>
-                <input type="text" placeholder="001xxxxxxx">
+                <input ng-model="alert.phone" type="text" placeholder="Phone number">
             </label>
         </div>
         <p>
-            <h3>Threat Level</h3>
+            Threat Level
         </p>
         <ion-list>
-            <ion-radio ng-model="level" ng-value="1">High - 1</ion-radio>
-            <ion-radio ng-model="level" ng-value="0">Low - 0</ion-radio>
+            <ion-radio ng-model="alert.level" ng-value="1">High - 1</ion-radio>
+            <ion-radio ng-model="alert.level" ng-value="0">Low - 0</ion-radio>
         </ion-list>
-        <button class="button button-full button-assertive"> Clear
+        <button ng-click="clear(alert)" class="button button-full button-assertive"> Clear
         </button>
-        <button class="button button-full button-calm"> Add
+        <button ng-click="addAlert(alert)" class="button button-full button-calm"> Add
         </button>
+        
     </ion-content>
 </ion-view>

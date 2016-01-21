@@ -1,6 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('NewAlertItemCtrl', function($scope) {})
+.controller('NewAlertItemCtrl', function($scope, AlertItems) {
+    $scope.addAlert = function(alert){
+       AlertItems.add(alert);
+    };
+    
+    $scope.clear = function(alert){
+        alert = null;
+    };
+})
 
 .controller('AlertsCtrl', function($scope, AlertItems) {
   // With the new view caching in Ionic, Controllers are only called
@@ -22,8 +30,37 @@ angular.module('starter.controllers', [])
   $scope.alertItem.icon = AlertItems.getIcon($stateParams.alertId);
 })
 
+/*.controller('NotifyCtrl',function($scope, $ionicPopup, $timeout) {
+
+// Triggered on a button click, or some other target
+    $scope.showPopup = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        $scope.showConfirm = function() {
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'ATTENTION REQUIRED',
+                template: 'Did u forget?'
+            });
+
+            confirmPopup.then(function(res) {
+                if(res) {
+                console.log('You are sure');
+                } else {
+                console.log('You are not sure');
+                }
+            });
+        };
+    };
+})*/
+
 .controller('SettingCtrl', function($scope) {
   $scope.settings = {
-    enableFriends: true
+    vibrate: true,
+    mute: false,
+    volume: 100
   };
+  
 });
+
+
