@@ -55,22 +55,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-alerts': {
           templateUrl: 'templates/tab-alerts.html',
-          controller: 'ChatsCtrl'
+          controller: 'AlertsCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/alerts/:chatId',
+    .state('tab.alert-item', {
+      url: '/alerts/:alertId',
       views: {
         'tab-alerts': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          templateUrl: 'templates/alert-item.html',
+          controller: 'AlertItemControl'
         }
       }
     })
 
   .state('tab.setting', {
-    url: '/setting',
+    url: '/settings',
     views: {
       'tab-setting': {
         templateUrl: 'templates/tab-setting.html',
